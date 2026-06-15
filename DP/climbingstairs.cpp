@@ -1,0 +1,24 @@
+// so this is same question as of fibonacci , andfrog jump easy one not hard one .. solved though dp 
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    // Number for which Fibonacci is to be calculated
+    int n = 3;
+
+    // Create a dp array initialized with -1
+    vector<int> dp(n + 1, -1);
+
+    // Base cases
+    dp[0] = 1;
+    dp[1] = 1;
+
+    // Fill dp array using bottom-up dynamic programming
+    for (int i = 2; i <= n; i++) {
+        dp[i] = dp[i - 1] + dp[i - 2];
+    }
+
+    // Print the nth Fibonacci number
+    cout << dp[n];
+    return 0;
+}
